@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block static_files %}
+    {% block static_file %}{% endblock %}
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}
+{% block main_body %}
+    <main>
+        <div class="container-flex flex-set">
+            <div id="left" class="container-flex">
+                <img src="/static/img/background.jpg">
+            </div>
+            <div id="right" class="container-flex">
+                {% block right_div %} {% endblock %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

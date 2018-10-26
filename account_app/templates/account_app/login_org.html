@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Session 3 Exercise</title>
+    <link rel="stylesheet" href="{% static "../../../static/css/reset.css" %}">
+    <link rel="stylesheet" href="{% static "../../../static/css/style.css" %}">
+    <!--<script type="text/javascript" src="static/js/index.js"></script>-->
+</head>
+<body>
+    <main>
+        <div class="container flex-set">
+            <div id="left" class="container">
+                <img src="{% static "../../../static/img/background.jpg" %}">
+            </div>
+            <div id="right" class="container">
+                <form class="login-form" action="">
+                    <p>
+                        <label for="log">Username or Email Address</label>
+                    </p>
+                    <input class="form-input" type="text" list="itemlist" id="log">
+                    <datalist id="itemlist">
+                        <option></option>
+                    </datalist>
+                    <p>
+                        <label for="psw">Password</label>
+                    </p>
+                    <input class="form-input" type="password" id="psw">
+                    <div class="submit">
+                        <label for="rememberme">
+                            <input class="form-input" type="checkbox" name="rememberme" id="rememberme">
+                            Remember Me
+                        </label>
+                        <button type="submit" name="submit">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

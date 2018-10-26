@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block main_body %}
+<form class="login-form" action="/register/" method="post">
+                {% csrf_token %}
+                <p>
+                    <label for="username">Email Address</label>
+                </p>
+                <input class="form-input" type="text" list="itemlist" id="username">
+                <datalist id="itemlist">
+                    <option></option>
+                </datalist>
+                <p>
+                    <label for="password">Password</label>
+                </p>
+                <input class="form-input" type="password" id="password">
+                <p>
+                    <label for="password_confirm">Confirm password</label>
+                </p>
+                <input class="form-input" type="password" id="password_confirm">
+                <div class="submit">
+                    <button type="submit" name="submit">Log in</button>
+                </div>
+            </form>
+{% endblock %}
