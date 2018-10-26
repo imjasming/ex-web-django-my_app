@@ -73,6 +73,7 @@ class MyUser(AbstractBaseUser):
         # Simplest possible answer: All admins are staff
         return self.is_admin
 
+    # set current time to created_date
     def set_created_date(self):
         self.created_at = datetime.date.today()
 

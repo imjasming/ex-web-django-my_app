@@ -25,12 +25,15 @@ label{
 p{
     margin: 5px 0 0 0;
 }
+h{
+    margin: 10px;
+}
 
 /**
 input style
  */
 input[type="email"], input[type="text"], input[type="password"]{
-    width: 200px;
+    width: 100%;
     height: 1.8em;
     padding: 0.2em 0.5em 0.2em 0.5em;
     margin-top: 0.4em;
@@ -47,6 +50,17 @@ input[type="checkbox"]{
     background: white;
 }
 
+.text-body{
+    height: 30%;
+    width: 30%;
+    padding: 50px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    background-color: rgba(230, 238, 232, 0.5);
+    box-shadow: black 0px 0px 8px;
+    transition: background-color 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
+}
+
 /**
 div container
  */
@@ -56,6 +70,15 @@ div container
     justify-content: center;
     padding: 0;
     margin: 0;
+}
+
+.table-vertical-align{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#login{
+    margin: 25% 0 0;
 }
 
 /**

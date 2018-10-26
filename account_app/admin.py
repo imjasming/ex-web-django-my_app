@@ -10,10 +10,10 @@ from .models import MyUser
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    password = forms.CharField(label='Password',
-                                widget=forms.PasswordInput(attrs={'class': 'form-input'}))
-    password_confirmation = forms.CharField(label='Password confirmation',
-                                widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    password = forms.CharField(label='Password', max_length=18,
+                               widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    password_confirmation = forms.CharField(label='Password confirmation', max_length=18,
+                                            widget=forms.PasswordInput(attrs={'class': 'form-input'}))
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'from-input'}))
 
     class Meta:
@@ -32,6 +32,7 @@ class UserCreationForm(forms.ModelForm):
         # Save the provided password in hashed format
         user = super().save(commit=False)
         user.set_password(self.cleaned_data["password"])
+        # here set current time to created_date
         user.set_created_date()
         if commit:
             user.save()

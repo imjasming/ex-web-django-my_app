@@ -27,16 +27,6 @@ def index_login(request):
         form = LoginForm()
     return render(request, 'account_app/login.html', {'form': form})
 
-    # if request.method != 'POST':
-    #     raise Http404('Only POSTs are allowed')
-    # try:
-    #     m = MyUser.objects.get(username=request.POST['username'])
-    #     if m.password == request.POST['password']:
-    #         request.session['member_id'] = m.id
-    #         return HttpResponseRedirect('/me/')
-    # except MyUser.DoesNotExist:
-    #     return HttpResponse("Your username and password didn't match.")
-
 
 def index_register(request):
     if request.method == 'POST':
@@ -50,7 +40,7 @@ def index_register(request):
                 user = auth.authenticate(request, username=username, password=password)
                 auth.login(request, user)
 
-                return HttpResponseRedirect("/me/")
+                return HttpResponseRedirect("/me")
             else:
                 error_message = 'The email is already taken'
                 return render(request, 'account_app/register.html', {'form': form, 'input_error': error_message})

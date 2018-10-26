@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="/static/css/style.css">
 {% endblock %}
 {% block main_body %}
-    <main>
-        <div class="container-flex flex-set">
-            <div id="left" class="container-flex">
-                <img src="/static/img/background.jpg">
-            </div>
-            <div id="right" class="container-flex">
+    <div class="container-flex flex-set">
+        <div id="left" class="container-flex">
+            <img src="/static/img/background.jpg">
+        </div>
+        <div id="right" class="container-flex">
+            <div id="login" class="table-vertical-align">
                 {% block right_div %} {% endblock %}
             </div>
         </div>
-    </main>
+    </div>
 {% endblock %}

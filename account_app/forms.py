@@ -3,7 +3,7 @@ from django import forms
 
 class LoginForm(forms.Form):
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'from-input'}))
-    password = forms.CharField(label='Password', min_length=6,
+    password = forms.CharField(label='Password', min_length=6, max_length=18,
                                widget=forms.PasswordInput(attrs={'class': 'form-input'}))
 
 

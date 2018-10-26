@@ -35,13 +35,13 @@ function validation() {
         return false;
     }
 
-    var psw1 = document.getElementById("id_password").value;
-    var psw2 = document.getElementById("password_confirmation").value;
-    if (psw1.length < 6 || psw2.length < 6) {
+    var psw1_str = document.getElementById("id_password").value;
+    var psw2_str = document.getElementById("id_password_confirmation").value;
+    if (psw1_str.length < 6 || psw2_str.length < 6) {
         document.getElementById("psw_error").innerHTML = "Password too short (6 chars. min)";
         return false;
     }
-    if (psw1.value != psw2.value) {
+    if (psw1_str !== psw2_str) {
         document.getElementById("psw_match").innerHTML = "Password mismatch!";
         return false;
     }
