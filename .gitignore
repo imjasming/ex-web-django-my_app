@@ -15,3 +15,6 @@ rest-client.private.env.json
 http-client.private.env.json
 
 /000_bk
+/16301026.zip
+/db.sqlite3
+/requirement.txt
