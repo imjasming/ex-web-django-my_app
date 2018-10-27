@@ -1,6 +1,6 @@
 {% extends "index.html" %}
         {% block right_div %}
-            <form class="login-form content-center" action="/login" onsubmit="return " method="post">
+            <form class="login-form content-center well-block" action="/login" onsubmit="return " method="post">
                 <p class="error">{{ input_error }}</p>
                 {{ form.non_field_errors }}
                 {% csrf_token %}
@@ -14,15 +14,15 @@
                     <label for="{{ form.password.id_for_label }}">Password</label>
                 </p>
                 {{ form.password }}
-                <div class="submit">
+                <p class="submit">
                     <label for="rememberme">
                         <input class="form-input" type="checkbox" name="rememberme" id="rememberme">
                         Remember Me
                     </label>
-                    <input type="submit" name="submit" value="Log in" id="submit">
-                </div>
+                    <input type="submit" name="submit" value="Log in" id="submit" class="link-button">
+                </p>
                 <p class="nav">
-                    <a href="/register">Register</a>
+                    <a href="/register" class="link-button">Register</a>
                 </p>
             </form>
         {% endblock %}

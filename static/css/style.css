@@ -25,8 +25,67 @@ label{
 p{
     margin: 5px 0 0 0;
 }
-h{
-    margin: 10px;
+
+.well-block{
+    background-color: rgb(245, 245, 245);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: black 0px 0px 8px;
+    transition: background-color 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
+}
+
+.table-vertical-align{
+    display: table-cell;
+    vertical-align: middle;
+    flex-direction: column;
+}
+
+/**
+div container
+ */
+.container, .container-flex{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.text-body{
+    height: 30%;
+    width: 30%;
+    padding: 50px;
+}
+
+.head-block{
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+/**
+form
+ */
+.login-form{
+    padding: 2em 2em 3em;
+    background-color: #fdfdfd;
+    display: block;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.content-center{
+    /*display:inline-block;*/
+    margin: auto;
+}
+
+.text-content{
+    vertical-align: middle;
+    display: inline;
+    line-height: 14px;
 }
 
 /**
@@ -50,72 +109,27 @@ input[type="checkbox"]{
     background: white;
 }
 
-.text-body{
-    height: 30%;
-    width: 30%;
-    padding: 50px;
-    background-color: rgb(245, 245, 245);
-    border-radius: 10px;
-    background-color: rgba(230, 238, 232, 0.5);
-    box-shadow: black 0px 0px 8px;
-    transition: background-color 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
-}
-
-/**
-div container
- */
-.container, .container-flex{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-.table-vertical-align{
-    display: table-cell;
-    vertical-align: middle;
-}
-
-#login{
-    margin: 25% 0 0;
-}
-
-/**
-form
- */
-.login-form{
-    max-width: 250px;
-    padding: 2em 2em 3em;
-    background-color: #fdfdfd;
-    display: block;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-}
-
-.content-center{
-    /*display:inline-block;*/
-    margin: auto;
-}
-
-.text-content{
-    vertical-align: middle;
-    display: inline;
-    line-height: 14px;
-}
-
 /**
 checkBox + submit button
  */
 .submit{
     vertical-align: middle;
+    flex-direction: row;
 }
 
 p.nav{
     justify-content: left;
-    margin-top: 40px;
-    float: left;
+    margin-top: 50px;
+}
+
+.link-button{
+    max-width: 64px;
+    padding: 10px;
+    text-align: center;
+    background-color: #0284bb;
+    color: white;
+    border: 0;
+    border-radius: 4px;
 }
 
 /**
@@ -134,9 +148,8 @@ checkBox label
 submit button
  */
 input[type="submit"], #submit{
-    padding: 3px 10px 3px;
+    /*padding: 3px 10px 3px;*/
     float: right;
-    background-color: #0284bb;
     color: white;
 }
 
@@ -168,12 +181,12 @@ right page
 /*
 responsive-design
 */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
     body{
         min-height: 500px;
     }
 
-    .flex-set{
+    .flex-reset{
         flex-direction: column;
     }
 }

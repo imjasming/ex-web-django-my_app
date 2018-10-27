@@ -1,10 +1,10 @@
 {% extends "index.html" %}
 {% block main_body %}
     <div class="container-flex">
-    <div class="table-vertical-align text-body">
-        <h1 class="content-center">{{ user.email }}</h1>
-        <p class="content-center">creation date: {{ user.created_at }}</p>
-        <a href="/logout">Log out</a>
+    <div class="table-vertical-align text-body well-block">
+        <h1 >{{ user.email }}</h1>
+        <p >creation date: {{ user.created_at }}</p><br>
+        <a href="/logout" class="link-button">Log out</a>
     </div>
     </div>
 {% endblock %}

@@ -22,10 +22,12 @@ def index_login(request):
                 return HttpResponseRedirect("me?user=" + username)
             else:
                 error_message = "Sorry, that's not a valid username or password"
-                return render('account_app/login.html', {'form': form, 'input_error': error_message})
+                return render(request, 'account_app/login.html',
+                              {'form': form, 'input_error': error_message, 'block_title': 'Login'})
     else:
         form = LoginForm()
-    return render(request, 'account_app/login.html', {'form': form})
+    return render(request, 'account_app/login.html',
+                  {'form': form, 'block_title': 'Login'})
 
 
 def index_register(request):
@@ -43,10 +45,11 @@ def index_register(request):
                 return HttpResponseRedirect("/me")
             else:
                 error_message = 'The email is already taken'
-                return render(request, 'account_app/register.html', {'form': form, 'input_error': error_message})
+                return render(request, 'account_app/register.html',
+                              {'form': form, 'input_error': error_message, 'block_title': 'Register'})
     else:
         form = UserCreationForm()
-    return render(request, 'account_app/register.html', {'form': form})
+    return render(request, 'account_app/register.html', {'form': form, 'block_title': 'Register'})
 
 
 @login_required
@@ -55,12 +58,7 @@ def index_me(request):
     return render(request, 'account_app/me.html', user)
 
 
-@login_required(redirect_field_name='/login')
+@login_required
 def index_logout(request):
     auth.logout(request)
     return HttpResponseRedirect("/login")
-    # try:
-    #     del request.session['member_id']
-    # except KeyError:
-    #     pass
-    # return HttpResponse("You're logged out.")
